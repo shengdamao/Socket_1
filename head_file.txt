@@ -1,0 +1,13 @@
+#include <stdio.h>   // fputs, 
+#include <unistd.h>  // read(), write(), fork(),
+#include <string.h>  // void memset( void * s , int c, size_t n );
+#include <sys/types.h>   // socket(), bind(), listen(),
+                        //
+#include <sys/socket.h>  // socket(), 
+
+#include <arpa/inet.h>  // htons(), htonl(), ntohs(), ntohl()
+
+#include <netinet/in.h> // inet_addr(), inet_aton(), inet_ntoa() 还需要<sys/socket.h> <arpa/inet.h>
+
+#include <errno.h>  // INTR 
+#include <stdlib.h> // NULL, EXIT_FAILURE, EXIT_SUCCESS
