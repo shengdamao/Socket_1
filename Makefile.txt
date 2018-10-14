@@ -1,0 +1,16 @@
+.PHONY : clean
+
+CC = gcc
+
+CFLAGS = -Wall -g
+
+BIN = echosrv echocli p2psrv p2pcli
+
+all : $(BIN)
+
+%.o : %.c
+    gcc -Wall -g -c $< -o $@
+
+clean : 
+    rm -f *.o $(BIN)
+
