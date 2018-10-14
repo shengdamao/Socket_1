@@ -22,7 +22,7 @@
 void do_service (int conn)
 {
     char recvbuf[1024];
-    while 1 {
+    while (1) {
         memset (recvbuf, 0 , sizeof(recvbuf));
         int ret = read (conn, recvbuf, sizeof(recvbuf));
         if (ret == 0)
