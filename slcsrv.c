@@ -176,6 +176,7 @@ int main (void)
 
 	int nready;
 	int maxfd = listenfd;
+	int maxi = 0;
 	fd_set rset;
 	fd_set allset;
 	FD_ZERO(&rset);
@@ -205,6 +206,8 @@ int main (void)
 	  			if (client[i] < 0)
 				{
 					client[i] = conn;
+					if (i > maxi)
+						maxi = i;
 					break;
 				}
 			}
@@ -222,7 +225,7 @@ int main (void)
 				continue;
 		}
 
-		for (i = 0; i < FD_SETSIZE; i++)
+		for (i = 0; i < maxi; i++)
 		{
 			conn = client[i];
 			if (conn == -1)
@@ -237,7 +240,8 @@ int main (void)
 				{
 					printf("client close\n");
 					FD_CLR(conn, &allset);
-					
+					client[i] = -1;
+ 					
 				}
 				fputs (recvbuf, stdout);
 				writen (conn, recvbuf, strlen(recvbuf));
