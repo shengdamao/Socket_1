@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -g
 
-BIN = rlinesrv rlinecli
+BIN = slcsrv slccli
  
 
 all : $(BIN)
