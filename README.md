@@ -6,3 +6,7 @@
 2.0 利用 select(), 完成 监听I/O 和 读写I/O 的同时处理。 fork()使父进程监听，新的子进程负责每个新连接的通讯细节
 2.1 单进程 利用 select 完成并发服务器。
 2.2 
+
+
+Basic -> peer to peer -> MultiClient  -> readn / writen
+Basic -> select 1.0 -> select 2.0 -> poll -> epoll
